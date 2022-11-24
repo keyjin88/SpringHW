@@ -21,7 +21,6 @@ public class QuestionDaoCsv implements QuestionDAO {
 
     public List<Question> getQuestions() {
         try {
-//            var fileReader = new FileReader(new ClassPathResource(path).getInputStream());
             var csvParser = new CSVParser(new InputStreamReader(new ClassPathResource(path).getInputStream()), CSVFormat.Builder.create()
                     .setIgnoreEmptyLines(false)
                     .setAllowMissingColumnNames(true)
