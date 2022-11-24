@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <beans>
+        <bean id="questionDao" class="ru.vavtech.hw01.dao.QuestionDaoCsv">
+            <constructor-arg name="path" value="/questions.csv"/>
+        </bean>
+        <bean id="examService" class="ru.vavtech.hw01.service.ExamServiceImpl">
+            <constructor-arg name="questionDAO" ref="questionDao"/>
+        </bean>
+    </beans>
+</beans>
